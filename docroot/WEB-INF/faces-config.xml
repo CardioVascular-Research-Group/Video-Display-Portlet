@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        version="2.0">
+
+	<lifecycle>
+		<phase-listener>edu.jhu.cvrg.portal.videodisplay.listener.VideoPhaseListener</phase-listener>
+	</lifecycle>
+</faces-config>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<f:view contentType="text/html"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:head />
+	<h:body>
+		<h:form id="f">
+				<h:panelGrid columns="2">
+					<h:outputLabel value="Select Source Folder:"/>
+					<p:selectOneMenu id="selectFolder"
+						style="width: 120px;" 
+						value="#{preferencesBacking.selectedFolder}"
+						partialSubmit="true">
+						<p:ajax listener="#{preferencesBacking.folderChangedEvent}" update="selectDefault"/>
+						<f:selectItems id="selectFoldersList" value="#{folderList.folders}" />
+					</p:selectOneMenu>
+					<h:outputLabel value="Select Default Video:"/>
+					<p:selectOneMenu id="selectDefault" 
+						immediate="true"
+						value="#{preferencesBacking.selectedVideo}" 
+						partialSubmit="true"
+						style="width: 120px;">
+						<f:selectItems id="selectVideosList" value="#{videoList.videos}" />
+					</p:selectOneMenu>
+					<h:outputLabel value="Video Selection Control:"/>
+					<p:selectOneRadio id="slctControl" layout="pageDirection" value="#{preferencesBacking.selectedControlType}">
+                        <f:selectItems id="slctControls" value="#{preferencesBacking.controls}"/>
+                    </p:selectOneRadio>
+                    <h:outputLabel value="Full Screen Display:"/>
+                    <p:selectBooleanCheckbox id="fullscreen" value="#{preferencesBacking.fullscreen}"/>
+                    <p:commandButton actionListener="#{preferencesBacking.apply}" id="applyButton" value="Save" />
+					<h:outputLabel id="saved" value="#{preferencesBacking.saved}" partialSubmit="true" />
+				</h:panelGrid>
+		</h:form>
+	</h:body>
+</f:view>
