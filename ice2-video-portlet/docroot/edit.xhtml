@@ -14,7 +14,7 @@
 				<ice:panelGrid columns="2">
 					<h:outputText value="Select Source Folder:"/>
 					<ice:selectOneMenu id="selectFolder"
-								style="width: 121px;" value="#{preferencesBacking.selectedFolder}"
+								style="width: 120px;" value="#{preferencesBacking.selectedFolder}"
 								valueChangeListener="#{preferencesBacking.folderChangedEvent}"
 								partialSubmit="true">
 								<f:selectItems id="selectFoldersList" value="#{folderList.folders}" />
@@ -23,10 +23,10 @@
 					<ice:selectOneMenu id="selectDefault" immediate="true"
 								value="#{preferencesBacking.selectedVideo}" partialSubmit="true"
 								valueChangeListener="#{preferencesBacking.changedVideoEvent}"
-								style="width: 121px;">
+								style="width: 120px;">
 								<f:selectItems id="selectVideosList" value="#{videoList.videos}" />
 					</ice:selectOneMenu>
-					<h:outputText value="Enter Hostname:"/>
+					<h:outputText value="Enter Host Name:"/>
 					<ice:inputText id="enterHost"
 								value="#{preferencesBacking.hostname}"
 								valueChangeListener="#{preferencesBacking.hostnameChanged}"
